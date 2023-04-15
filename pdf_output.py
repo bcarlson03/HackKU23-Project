@@ -15,7 +15,7 @@ def generate_pdf(note):
     summary_string = ''
     for line in note.summary:
         summary_string += line + '\n'
-    pdf.multi_cell(w = 0, h = 5, txt = summary_string, border = 0, align = 'L', fill = False)
+    pdf.multi_cell(w = 10, h = 5, txt = note.summary, border = 0, align = 'L', fill = False)
 
     #Adds a line separating the summary with the original transcript.
     pdf.cell(ln=0, h=5.0, align='C', w=0, txt='Original Audio Transcript', border = 0)
@@ -23,11 +23,11 @@ def generate_pdf(note):
     #Adds the full transcription from the google cloud api into the pdf. 
     transcription_string = ''
     for line in note.transcription:
-        transcript_string += line + '\n'
-    pdf.multi_cell(w = 0, h = 5, txt = summary_string, border = 0, align = 'L', fill = False)
+        transcription_string += line + '\n'
+    pdf.multi_cell(w = 10, h = 5, txt = note.transcription, border = 0, align = 'L', fill = False)
 
     #Creates the pdf file with the same name as the mp3 file. 
-    pdf.output(f"notes/{note.name}", 'F')
+    pdf.output(f"notes/{note.name}.pdf", 'F')
 
 def main(note):
     generate_pdf(note)
