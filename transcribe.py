@@ -14,6 +14,8 @@ given_uri = "gs://cloud-samples-data/speech/brooklyn_bridge.mp3"
 
 mp3_filename = "second.mp3"
 
+def main(note):
+    transcribe(note.path)
 
 def transcribe(mp3_filename=mp3_filename):
     my_uri = upload_file()
@@ -46,5 +48,3 @@ def upload_file():
     my_blob = my_bucket.blob("note_me_blob")
     my_blob.upload_from_filename(mp3_filename)
     return "gs://note_me_bucket/note_me_blob"
-
-transcribe()
