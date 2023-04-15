@@ -1,10 +1,11 @@
 from graphics import Circle, GraphWin, Point, Rectangle, Text
+import check_folders
 import pyautogui
 import tkinter.filedialog as fd
 import shutil
 import os
 import platform
-import main
+import main as run
 
 # Window Creation
 #----------------
@@ -71,11 +72,12 @@ def get_slash():
         SLASH = fr'\'' # Windows
     return SLASH
 
+check_folders.main() # Check if the folders exist
 button1_pos = (75, 75)
 button1_size = (300, 50)
 button1_text = 'Select File'
 button1 = draw_button(win, button1_pos, button1_size, button1_text)
-button2_pos = (75, 600)
+button2_pos = (75, 300)
 button2_text = 'Generate'
 button2 = draw_button(win, button2_pos, button1_size, button2_text)
 
@@ -101,7 +103,7 @@ while True:
             open_file()
         elif button2.getP1().getX() <= click_point.getX() <= button2.getP2().getX() and \
             button2.getP1().getY() <= click_point.getY() <= button2.getP2().getY():
-            main()
+            run.main()
             break
         else:
             pass
@@ -109,5 +111,6 @@ while True:
         pass
 
 
-
+shutil.rmtree("audio_files")
+os.mkdir("audio_files")
 win.close()

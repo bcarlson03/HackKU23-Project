@@ -1,6 +1,7 @@
 from note import Note
 import os
 import transcribe
+import platform
 import note_maker
 import check_folders
 import pdf_output
@@ -31,7 +32,7 @@ def check_if_wav(audio_file):
     
 def get_slash():
     """Get the slash for the operating system"""
-    op_sys = os.name
+    op_sys = platform.system()
     if op_sys == 'Darwin' or op_sys == 'Linux': # Mac or Linux
         SLASH = '/'
     else:
