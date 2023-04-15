@@ -5,7 +5,7 @@ def generate_pdf(note):
     #Creates a PDF object and sets its font and starting coordinates.
     pdf = FPDF()
     pdf.add_page()
-    pdf.set_xy(10, 20)
+    pdf.set_xy(0, 20)
     pdf.set_font('Times', 'B', 12.0)
 
     
@@ -32,7 +32,7 @@ def generate_pdf(note):
     pdf.multi_cell(w = 0, h = 5, txt = note.transcription, border = 0, align = 'L', fill = False)
 
     #Creates the pdf file with the same name as the mp3 file. 
-    pdf.output(f"notes/{note.name}.pdf", 'F')
+    pdf.output(f"notes/{note.name}pdf", 'F')
 
 def main(note):
     generate_pdf(note)
