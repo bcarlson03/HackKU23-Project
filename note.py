@@ -6,5 +6,6 @@ class Note:
         self.audio = None
         self.transcription = None
         self.summary = None
+        self.results = None
 
     

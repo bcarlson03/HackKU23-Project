@@ -8,8 +8,8 @@ def main(note):
 
     # Adds the transcript
     prompt += note.transcription
-
+    print("THIS IS THE PROMPT: " + prompt)
     # Gets GPT's response
-    response = gpt.main(print)
+    response = gpt.main(prompt)
 
     note.summary = response

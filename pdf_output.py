@@ -8,6 +8,7 @@ def generate_pdf(note):
     pdf.set_xy(0, 20)
     pdf.set_font('Times', 'B', 12.0)
 
+    
     #Adds a header saying the following will be the condensed notes. 
     pdf.cell(ln=0, h=5.0, align='C', w=0, txt='Generated Notes', border = 0)
 
@@ -18,6 +19,7 @@ def generate_pdf(note):
     pdf.set_xy(10, 30)
     pdf.multi_cell(w = 0, h = 5, txt = note.summary, border = 0, align = 'L', fill = False)
 
+    pdf.set_y(pdf.get_y()+10)
     #Adds a line separating the summary with the original transcript.
     pdf.cell(ln=0, h=5.0, align='C', w=0, txt='Original Audio Transcript', border = 0)
 

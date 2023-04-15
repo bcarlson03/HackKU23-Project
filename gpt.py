@@ -1,13 +1,13 @@
 import openai
 
-openai.api_key = "KEY"
+openai.api_key = "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"
 
 def main(prompt):
     # Set the model and prompt
     model_engine = "text-davinci-002"
 
     # Set the maximum number of tokens to generate in the response
-    max_tokens = 200
+    max_tokens = 300
 
     # Generate a response
     completion = openai.Completion.create(
