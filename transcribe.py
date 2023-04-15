@@ -18,25 +18,23 @@ def main(note):
 
 def transcribe(wav_filename):
     my_uri = upload_file(wav_filename)
-    config = speech.RecognitionConfig(language_code="en", audio_channel_count=1)
     audio = speech.RecognitionAudio(uri=my_uri)
     client = speech.SpeechClient()
 
+    try:
+        config = speech.RecognitionConfig(language_code="en", audio_channel_count=2)
+
+    except:
+        config = speech.RecognitionConfig(language_code="en", audio_channel_count=1)
+
     operation = client.long_running_recognize(config=config, audio=audio)
     response = operation.result()
-
-
-    # response = speech_to_text(config, audio)
     results = []
+
     for response in response.results:
         results.append(str(response))
     cleaned_output = clean_output.main(results)
     return (cleaned_output, results)
-    #out_file = open("results.txt", "w")
-    #for line in results:
-        #out_file.write(f"{line}\n")
-    #out_file.close()
-    #return out_file 
 
 def speech_to_text(
     config: speech.RecognitionConfig,
@@ -44,7 +42,6 @@ def speech_to_text(
 ) -> speech.RecognizeResponse:
     client = speech.SpeechClient()
 
-    # Synchronous speech recognition request
     response = client.recognize(config=config, audio=audio)
 
     return response
