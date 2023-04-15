@@ -7,6 +7,7 @@ import pdf_output
 
 def main():
     """Main function"""
+    check_folders.main() # Check if the folders exist
     SLASH = get_slash() # Get the slash for the operating system
     for audio_file in os.listdir(f"{SLASH}audio_files"):
         note_maker(audio_file) # Create a note for each audio file
