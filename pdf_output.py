@@ -33,7 +33,7 @@ def generate_pdf(note):
     pdf.multi_cell(w = 0, h = 6, txt = note.transcription, border = 0, align = 'L', fill = False)
 
     #Creates the pdf file with the same name as the mp3 file. 
-    pdf.output(f"notes/{note.name}.pdf", 'F')
+    pdf.output(f"notes/{note.name}pdf", 'F')
 
 def fix_apostrophe(body_information):
     #Fixes ChatGPT's weird apostrophe formatting so apostrophes appears normal when viewed in the pdf. 
