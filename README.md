@@ -16,7 +16,7 @@ python -m pip install -r requirements.txt
 ```
 
 
-Upon first running main.py two folders will be created, one named "audio_files" and one named "notes."
+Upon first running main.py or interface.py two folders will be created, one named "audio_files" and one named "notes."
 
 Once those folders have been created (or if you create them) place your audio files in the "audio_files" folder and run main.py again.
 

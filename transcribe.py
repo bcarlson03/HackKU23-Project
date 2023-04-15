@@ -22,10 +22,10 @@ def transcribe(wav_filename):
     client = speech.SpeechClient()
 
     try:
-        config = speech.RecognitionConfig(language_code="en", audio_channel_count=2)
+        config = speech.RecognitionConfig(language_code="en", audio_channel_count=1)
 
     except:
-        config = speech.RecognitionConfig(language_code="en", audio_channel_count=1)
+        config = speech.RecognitionConfig(language_code="en", audio_channel_count=2)
 
     operation = client.long_running_recognize(config=config, audio=audio)
     response = operation.result()
