@@ -4,15 +4,17 @@
 
 The process is very simple, simply install the files above using:
 
-'''
+```
 git clone git@github.com:bcarlson03/HackKU23-Project.git
-'''
+```
+
 
 Navigate to the repo and run
 
-'''
+```
 python -m pip install -r requirements.txt
-'''
+```
+
 
 Upon first running main.py two folders will be created, one named "audio_files" and one named "notes."
 
