@@ -6,7 +6,7 @@ def generate_pdf(note):
     pdf = FPDF()
     pdf.add_page()
     pdf.set_xy(0, 20)
-    pdf.set_font('Times', 'B', 13.0)
+    pdf.set_font('Times', 'B', 12.0)
 
     #Adds a header saying the following will be the condensed notes. 
     pdf.cell(ln=0, h=5.0, align='C', w=0, txt='Generated Notes', border = 0)
@@ -15,7 +15,8 @@ def generate_pdf(note):
     summary_string = ''
     for line in note.summary:
         summary_string += line + '\n'
-    pdf.multi_cell(w = 10, h = 5, txt = note.summary, border = 0, align = 'L', fill = False)
+    pdf.set_xy(10, 30)
+    pdf.multi_cell(w = 0, h = 5, txt = note.summary, border = 0, align = 'L', fill = False)
 
     #Adds a line separating the summary with the original transcript.
     pdf.cell(ln=0, h=5.0, align='C', w=0, txt='Original Audio Transcript', border = 0)
@@ -24,7 +25,9 @@ def generate_pdf(note):
     transcription_string = ''
     for line in note.transcription:
         transcription_string += line + '\n'
-    pdf.multi_cell(w = 10, h = 5, txt = note.transcription, border = 0, align = 'L', fill = False)
+    pdf.set_xy(10, pdf.get_y()+10)
+    
+    pdf.multi_cell(w = 0, h = 5, txt = note.transcription, border = 0, align = 'L', fill = False)
 
     #Creates the pdf file with the same name as the mp3 file. 
     pdf.output(f"notes/{note.name}.pdf", 'F')

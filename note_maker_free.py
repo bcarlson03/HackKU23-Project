@@ -8,6 +8,6 @@ def main(note):
     prompt += note.transcription
 
     # Gets GPT's response
-    response = "Lorem ipsum dolor sit amet, \nconsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    response = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae turpis massa sed elementum tempus egestas sed. Facilisi nullam vehicula ipsum a arcu cursus vitae congue. Urna cursus eget nunc scelerisque viverra. Tortor at risus viverra adipiscing at. Viverra maecenas accumsan lacus vel facilisis volutpat est velit egestas. Interdum posuere lorem ipsum dolor sit amet. Amet dictum sit amet justo donec enim. Mi proin sed libero enim sed faucibus. Cras ornare arcu dui vivamus arcu felis. Netus et malesuada fames ac turpis egestas sed tempus urna. Ultrices neque ornare aenean euismod elementum nisi quis. Amet consectetur adipiscing elit pellentesque habitant."
 
     note.summary = response
