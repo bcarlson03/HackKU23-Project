@@ -36,5 +36,6 @@ def get_slash():
         SLASH = '/'
     else:
         SLASH = fr'\'' # Windows
+    return SLASH
 
 main()
