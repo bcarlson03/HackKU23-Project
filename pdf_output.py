@@ -5,7 +5,7 @@ def generate_pdf(note):
     #Creates a PDF object and sets its font and starting coordinates.
     pdf = FPDF()
     pdf.add_page()
-    pdf.set_xy(0, 20)
+    pdf.set_xy(10, 20)
     pdf.set_font('Times', 'B', 12.0)
 
     
