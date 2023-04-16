@@ -23,4 +23,4 @@ You can start the program in one of two ways...
 
 You can run "main.py" to simply convert the .wav files in the folder into .pdfs in the "notes" folder. If you would like a more guided experience, run "interface.py" to open an interactive GUI which can add files from anywhere on your device. Then click "Generate" to start the conversion process.
 
-This project is powered by Google Cloud's API to allow for rapid speech-to-text conversion. It also leverages OpenAI's GPT Davini-002 model for note refinement.
+This project is powered by Google Cloud's API to allow for rapid speech-to-text conversion. It also leverages OpenAI's GPT Davinci-002 model for note refinement.
