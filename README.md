@@ -1,4 +1,4 @@
-# HackKU23 Project
+# Noteably - HackKU23 Project
 
 This is a project created for HackKU23 created by Blake Carlson, Michael Stang, Holden Vail, and Logan Smith. 
 
