@@ -1,27 +1,26 @@
 # HackKU23 Project
 
-[INSERT NAME HERE] is an AI-Powered Note taking tool that can automate the note-taking process. Simply let it listen in on lectures, meetings, seminars, and more, and it will automatically create refined notes and full transcriptions to help those who prefer not to take notes (but still would want them), and more importantly, help those who can't take notes on their own.
+This is a project created for HackKU23 created by Blake Carlson, Michael Stang, Holden Vail, and Logan Smith. 
 
-The process is very simple, simply install the files above using:
+Noteably is an AI-Powered Note taking tool that can automate the note-taking process. Simply give it an audio file of a lecture, meeting, seminar, or more, and it will automatically create refined notes and full transcriptions to create a more accessible learning environment and elevate the learning oppurtunities for those who may be unable to take notes or those who find taking notes distracting. 
+
+Installing Noteably is very simple. Start by cloning this GitHub repo as seen below.
 
 ```
 git clone git@github.com:bcarlson03/HackKU23-Project.git
 ```
 
 
-Navigate to the repo and run
+Once it is installed, simply run the following command while located at the repo to install all needed packages for Notebly to run. 
 
 ```
 python -m pip install -r requirements.txt
 ```
 
+Once installed, using Noteably is quite simple. After your first run of "main.py" two folders will be created, "audio_files" and "notes." Place all of your .wav files in the "audio_files" folder and run the program to start the process.
 
-Upon first running main.py or interface.py two folders will be created, one named "audio_files" and one named "notes."
+You can start the program in one of two ways...
 
-Once those folders have been created (or if you create them) place your audio files in the "audio_files" folder and run main.py again.
+You can run "main.py" to simply convert the .wav files in the folder into .pdfs in the "notes" folder. If you would like a more guided experience, run "interface.py" to open an interactive GUI which can add files from anywhere on your device. Then click "Generate" to start the conversion process.
 
-Give it time to process and it should output one .pdf in the "notes" folder for each .mp3 in the "audio_files" folder.
-
-This is a project created for HackKU23 created by Blake Carlson, Michael Stang, Holden Vail, and Logan Smith. 
-
-Our program works by first taking an mp3 file and uses the Google Cloud API to generate a transcription of the audio. The transcription is stored as a .txt file. The text file is then given to the ChatGPT API and is prompted to create a summary of the transcription which will be used as notes. The response will be stored as a string. The transcript and summarization is then used to create a pdf which contains the formatted notes as well as the original transcript of the audio file.   
+This project is powered by Google Cloud's API to allow for rapid speech-to-text conversion. It also leverages OpenAI's GPT Davini-002 model for note refinement.
