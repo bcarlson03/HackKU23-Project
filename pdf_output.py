@@ -13,9 +13,9 @@ def generate_pdf(note):
 
     #Adds the summary generated from ChatGPT to the PDF, which comes from the "note" object.
     pdf.set_font('Times', '', 12)
-    pdf.set_xy(10,10)
+    pdf.set_xy(0,10)
 
-    note.summary = fix_apostrophe(note.strip().summary)
+    note.summary = fix_apostrophe(note.summary)
     pdf.multi_cell(w = 0, h = 6, txt = note.summary, border = 0, align = 'L', fill = False)
 
     #Adds a line separating the summary with the original transcript.
@@ -28,7 +28,7 @@ def generate_pdf(note):
     pdf.set_xy(10, pdf.get_y()+10)
     pdf.set_font('Times', '', 12)
     
-    note.transcription = fix_apostrophe(note.strip().transcription)
+    note.transcription = fix_apostrophe(note.transcription)
     pdf.multi_cell(w = 0, h = 6, txt = note.transcription, border = 0, align = 'L', fill = False)
 
     #Creates the pdf file with the same name as the mp3 file. 
