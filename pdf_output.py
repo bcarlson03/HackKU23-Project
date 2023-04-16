@@ -5,7 +5,7 @@ def generate_pdf(note):
     #Creates a PDF object and sets its font and starting coordinates.
     pdf = FPDF()
     pdf.add_page()
-    pdf.set_xy(0, 10)
+    pdf.set_xy(0, 0)
 
     #Adds a header saying the following will be the condensed notes. 
     pdf.set_font('Times', 'UB', 16)
@@ -15,7 +15,7 @@ def generate_pdf(note):
     pdf.set_font('Times', '', 12)
     pdf.set_xy(10,10)
 
-    note.summary = fix_apostrophe(note.summary)
+    note.summary = fix_apostrophe(note.strip().summary)
     pdf.multi_cell(w = 0, h = 6, txt = note.summary, border = 0, align = 'L', fill = False)
 
     #Adds a line separating the summary with the original transcript.
@@ -28,7 +28,7 @@ def generate_pdf(note):
     pdf.set_xy(10, pdf.get_y()+10)
     pdf.set_font('Times', '', 12)
     
-    note.transcription = fix_apostrophe(note.transcription)
+    note.transcription = fix_apostrophe(note.strip().transcription)
     pdf.multi_cell(w = 0, h = 6, txt = note.transcription, border = 0, align = 'L', fill = False)
 
     #Creates the pdf file with the same name as the mp3 file. 
